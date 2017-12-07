@@ -21,12 +21,22 @@ const list = [
 ];
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      list: list,
+      versionNumber: 'v1.2.7',
+    };
+  }
+
   render() {
     const helloWorld = 'Welcome to the road to learn React';
     const user = { firstname: "React", lastname: "Reacterson"}
     return (
       <div className="App">
-        {list.map(item =>
+        {this.state.list.map(item =>
           <div key={item.objectID}>
             <span>
               <a href={item.url}>{item.title}</a>
@@ -36,6 +46,7 @@ class App extends Component {
             <span>{item.points}</span>
           </div>
         )}
+        <h3>{this.state.versionNumber}</h3>
       </div>
     );
   }
