@@ -26,8 +26,10 @@ class App extends Component {
     super(props);
 
     this.state = {
-      list: list,
-      versionNumber: 'v1.2.7',
+      list,
+      versionNumber() {
+        return 'v1.2.7';
+      }
     };
   }
 
@@ -46,7 +48,7 @@ class App extends Component {
             <span>{item.points}</span>
           </div>
         )}
-        <h3>{this.state.versionNumber}</h3>
+        <h3>{this.state.versionNumber()}</h3>
       </div>
     );
   }
